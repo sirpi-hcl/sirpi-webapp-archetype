@@ -1,0 +1,615 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	width:960px;
+	margin:0 auto;
+	border:0;
+	padding :0;
+	background:url("#{resource['img:pagebg.jpg']}") repeat-x fixed;
+}
+.sprite {
+	background:url("#{resource['img:sprite.png']}") top left no-repeat;
+}
+.logo_sprite {
+	background-position: -7px -220px;
+	height: 52px;
+	width: 163px;
+	color: transparent;
+}
+.f1 {
+	background-position: -9px -76px;
+	float: left;
+	height: 41px;
+	width: 69px;
+	color: transparent;
+	font-size:0;
+}
+.f2 {
+	background-position: -9px -122px;
+	float: left;
+	height: 41px;
+	width: 69px;
+	color: transparent;
+	font-size:0;
+}
+.f3 {
+	background-position: -9px -167px;
+	float: left;
+	height: 41px;
+	width: 69px;
+	color: transparent;
+	font-size:0;
+}
+.crt {
+	background-position: -8px -9px;
+	color: transparent;
+	float: right;
+	height: 30px;
+	width: 103px;
+	font-size:0;
+}
+.edt {
+	background-position: -8px -41px;
+	color: transparent;
+	float: right;
+	height: 30px;
+	width: 103px;
+	font-size:0;
+}
+#header {
+	float: left;
+	width: 960px;
+	background:#fff;
+	height:45px;
+	background-image:url("#{resource['img:hdr_bg.png']}");
+}
+#header .logo {
+	float:left;
+	padding: 4px 0 0 10px;
+	color: #638B98;
+	font: lighter 25px "Segoe UI";
+	font-weight:bold;
+	padding-left:10px;
+}
+#header .cont {
+	font:normal 12px arial;
+	color:#666;
+	float:right;
+	padding-right:15px;
+}
+.cont a {
+	color:#666;
+}
+#banner {
+	background-image:url("#{resource['img:gf_mainbanner.jpg']}");
+	background-repeat:no-repeat;
+	width:960px;
+	height:235px;
+	float:left;
+}
+#login {
+	background-color: #FFFFFF;
+	background-position: -176px -14px;
+	border: 1px solid #EEEEEE;
+	float: right;
+	height: 286px;
+	margin: -141px 14px 0 0;
+	width: 247px;
+}
+.lgnhdr {
+	color: #5B8390;
+	font: lighter 29px "Segoe UI Light";
+	font: lighter 29px "Segoe UI";
+	margin-left: 6px;
+}
+.lgnfld {
+	font:bold 12px arial;
+	color:#aaa;
+	padding:5px 0 5px 0;
+}
+.lgnfrm {
+	padding: 10px;
+}
+.lgnfrm input {
+	border: 1px solid #EEEEEE;
+	height: 20px;
+	width: 200px;
+}
+.lgnbtn {
+    background-color: #5F8694;
+    color: #FFFFFF;
+    font: 17px segoe ui !important;
+    height: 35px !important;
+    margin-top: 10px;
+    padding: 4px;
+    width: 85px !important;
+}
+#login p {
+	color: #666666;
+	font: 11px arial;
+	margin: 0;
+	padding: 10px;
+}
+.lgncont1 {
+	width: 300px;
+	float:left;
+    padding-left: 12px;
+}
+.lgncont2 {
+	float: left;
+	width: 300px;
+}
+.lgncont1 h1, .lgncont2 h1 {
+	border-bottom: 1px solid #EEEEEE;
+	color: #5B8390;
+	font: lighter 29px "Segoe UI";
+}
+.lgncont1 p {
+	color: #878787;
+	font: 11px/20px arial;
+	text-align: justify;
+}
+.lgncont2 p {
+	color: #878787;
+	font: 11px/20px arial;
+	text-align: justify;
+}
+.lgncont2 img {
+	float: left;
+	padding-right: 10px;
+}
+.sprtr {
+	background-position: -132px -6px;
+	background-repeat: no-repeat;
+	float: left;
+	height: 202px;
+	margin: 40px 17px 0 40px;
+	width: 6px;
+}
+#footer {
+	float: left;
+	padding: 10px;
+	text-align: right;
+	width: 940px;
+	color: #819977;
+	font: 12px arial;
+}
+#footer .greenfield-logo {
+	background:url("#{resource['img:greenfield-logo.jpg']}") no-repeat 55px 0px;
+	width:150px;
+	height:30px;
+	float:right;
+	text-align:left;
+}
+.menu {
+	float: left;
+	margin: 0;
+	width: 960px;
+	background:url("#{resource['img:menubg.png']}");
+	height:30px;
+}
+.menu a {
+	text-decoration:none;
+	color:#fff;
+	font: normal 12px arial;
+	line-height:30px;
+}
+.menu dd {
+	/*border-right: 1px solid #86a67a;*/
+	float: left;
+	height:30px;
+	margin: 0;
+	text-align: center;
+	width: 92px;
+}
+.subbg {
+	background-color: #FFFFFF;
+	float: left;
+	padding-bottom: 8px;
+	width: 960px;
+}
+.cntrbdypan {
+	width:747px;
+	padding-top:10px;
+	float:left;
+}
+.cntrbdypan .error {
+	padding:8px;
+	margin:10px 0px 10px 0px;
+	border:solid 1px #FBD3C6;
+	background:#FDE4E1;
+	color:#CB4721 !important;
+	font: normal 16px arial;
+	font-weight:bold;
+	text-align:center;
+}
+.cntrbdypan .success {
+	padding:8px;
+	margin:10px 0px 10px 0px;
+	border:solid 1px #C0F0B9;
+	background:#D5FFC6;
+	color:#48A41C !important;
+	font: normal 16px arial;
+	font-weight:bold;
+	text-align:center;
+}
+.box1 {
+	background-color: #AAC4CC;
+	color: #E8EEF0;
+	float: left;
+	font: 14px segoe ui;
+	margin: 0 10px 10px 0;
+	min-height: 142px;
+	padding: 10px;
+	width: 206px;
+}
+.box1 strong {
+	font: 32px segoe ui light;
+	padding-right: 16px;
+	position: relative;
+	width: 100px;
+}
+.box1 h1 {
+	border: 0 none !important;
+	color: #FFFFFF !important;
+	font: 25px "Segoe UI" !important;
+	padding: 0;
+}
+.lftmenu {
+	float:left;
+	width:185px;
+	margin-left: 5px;
+	background-image:url("#{resource['img:gf_lftmenu_bg.jpg']}");
+	background-repeat:repeat-y;
+	height:auto;
+}
+.cntrmenu {
+	background-color: #FBFBFB;
+	float: left;
+	margin-left: 6px;
+	margin-top: 7px;
+	padding: 10px;
+	width: 737px;
+	min-height: 477px;
+}
+.lftmenu dd {
+	background-color: #F5F8F9;
+	font: 12px arial;
+	margin: 5px 2px 5px 4px;
+	padding: 10px 12px;
+}
+.lftmenu dd a {
+	color:#638B98;
+}
+.lftmenu dl {
+	margin-top: 8px;
+}
+.lftmenu dt {
+	padding-bottom: 12px;
+}
+.srchbx {
+	border:1px solid #F5F8F9;
+	border-right:0;
+	padding:5px;
+	height:17px;
+}
+.srchbtn {
+	position:absolute;
+}
+.lftmenu a {
+	text-decoration:none;
+	color:#000;
+}
+.cntrmenu h1 {
+	border-bottom: 1px solid #EEEEEE;
+	color: #5B8390;
+	font: 29px "Segoe UI Light";
+	margin: 0;
+}
+.dshbrd {
+	float:left;
+	width: 737px;
+}
+.frmbdy {
+	float:left;
+	width: 773px;
+}
+.custlist {
+	float: left;
+	width: 350px;
+	padding: 10px;
+}
+.custdetls {
+	float: left;
+	padding: 10px;
+	width: 347px;
+	background-image:url("#{resource['img:custdetail_bg.png']}");
+	background-repeat:repeat-x;
+}
+.csthdng {
+	border-bottom: 1px dotted #CCCCCC;
+	float: left;
+	padding-bottom: 10px;
+	width: 100%;
+}
+.custlist h2 {
+	color: #535353;
+	float: left;
+	font: lighter 19px "Segoe UI";
+	margin: 0;
+}
+.custlist img {
+	float:right;
+}
+.cstmls {
+	float: left;
+	height: 370px;
+	overflow: auto;
+	width: 100%;
+	margin-top: 15px;
+}
+ul.custmr {
+	margin:0;
+}
+.custmr li {
+	color: #333;
+	font: 14px arial;
+	list-style-image: url("#{resource['img:gf_silhoute.jpg']}");
+	padding: 5px 0;
+}
+
+
+.custmr a{
+	color:#333;
+	text-decoration: none;
+}
+
+.custmr a:hover{
+	color:#313234;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+
+.custdetls h2 {
+	color: #535353;
+	float: left;
+	font: lighter 19px "Segoe UI";
+	margin: 0;
+}
+.custdetls img {
+	float:right;
+}
+/*view starts here*/
+.custinfotbl {
+	color: #5F8694;
+	float: left;
+	font: normal 14px Arial;
+	margin-left: 3px;
+	width: 338px;
+}
+.custinfotbl dd {
+	float: left;
+	margin: 0;
+	width: 169px;
+}
+.custinfotbl div {
+	font: normal 16px Arial !important;
+	color:#555A27;
+	margin: 0 0 20px;
+}
+/*view ends here*/
+/*create/edit starts here*/
+.custinfocrttbl {
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	color: #5F8694;
+	/*display: none;*/
+    float: left;
+	font: normal 14px Arial;
+	left: 373px;
+	margin: 0 auto;
+	padding: 20px;
+	position: absolute;
+	top: 145px;
+	width: 648px;
+}
+.custinfocrttbl dd {
+	float: left;
+	margin: 0;
+	width: 216px;
+}
+.custinfocrttbl dt {
+	border-bottom: 1px solid #CCCCCC;
+	color: #5F8694;
+	font: 24px segoe ui light;
+	margin-bottom: 19px;
+	padding-bottom: 11px;
+}
+.custinfocrttbl div {
+	font: normal 16px Arial !important;
+	color:#555A27;
+	margin: 0 0 20px;
+}
+.custinfocrttbl input[type="text"] {
+	border: 1px solid #eeeeee;
+	color: #666666;
+	font-family: "Helvetica Narrow","Arial Narrow",Tahoma,Arial,Helvetica,sans-serif !important;
+	font-style:12px;
+	font-weight:normal;
+	padding:5px;
+	margin-top: 6px;
+}
+.custinfocrttbl input[type="button"] select {
+    background-color: #5F8694;
+    border: 0 none;
+    color: #FFFFFF;
+    font-family: "Helvetica Narrow","Arial Narrow",Tahoma,Arial,Helvetica,sans-serif !important;
+    font-size: 17px;
+    height: 35px;
+    padding: 4px;
+    width: 85px;
+}
+/*create/edit starts here*/
+.custinfocrttbla {
+	color: #878F3F;
+	/*display: none;*/
+    float: left;
+	font: normal 12px "Arial Narrow";
+	margin: 0 auto;
+	width: 648px;
+}
+.custinfocrttbla dd {
+	float: left;
+	margin: 0;
+	width: 216px;
+}
+.custinfocrttbla div {
+	font: normal 12px arial !important;
+	color:#555A27;
+	margin: 0 0 20px;
+}
+.custinfocrttbla input[type="text"] {
+	border: 1px solid #CCCCCC;
+	color: #666666;
+	font: normal 12px Arial Narrow !important;
+	padding: 5px;
+}
+.custinfocrttbla input[type="button"] {
+   background-color: #5F8694;
+    border: 0 none;
+    color: #FFFFFF;
+    font: 17px segoe ui !important;
+    height: 35px;
+    padding: 4px;
+    width: 85px;
+}
+table.gridtable {
+	font: normal 12px arial !important;
+	color:#333333;
+	border-width: 1px;
+	border-color: #7da289;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #7da289;
+	background-color: #d2eec9;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #7da289;
+	background-color: #ffffff;
+}
+#litbx {
+	display: none;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	background-image:url("#{resource['img:lit_box.png']}");
+	background-repeat:repeat;
+}
+.litbx {
+	float:left;
+	overflow:hidden;
+}
+/*create/edit ends here*/
+.frmtbl {
+	font: normal 12px "arial";
+	color:#777;
+	margin-top: 20px;
+}
+.frmtbl td {
+	padding:10px;
+	text-align:right;
+}
+.frmtbl input[type="text"] {
+	border: 1px solid #EEEEEE;
+	height: 20px;
+	width: 200px;
+	float:left;
+}
+.frmtbl .lgnbtn {
+	text-align:center;
+}
+.lftmenu .selec {
+	background-color: #FBFBFB;
+	margin: 0 0 0 3px;
+	padding: 10px 12px;
+	width: 188px;
+}
+.lftmenu .selec a {
+	color:#638B98;
+	font-weight:bold;
+}
+.menu .select a {
+	color:#000;
+	background:url("#{resource['img:menubg-select.jpg']}") repeat-x;
+	display:block;
+	font-weight: normal;
+}
+.menu .select {
+	background-color: #FFFFFF;
+}
+.ptclnq {
+	margin: 59px 2px 3px 479px;
+	position: absolute;
+	width: 273px;
+}
+.quotes {
+	background-image: url("#{resource['img:quotes.png']}");
+	background-repeat: no-repeat;
+	color: #AAC4CC;
+	font: 12px segoe ui;
+	height: 89px;
+	padding: 12px 47px 0 41px;
+	position: absolute;
+	width: 160px;
+}
+.dashbrd {
+	float: left;
+	width: 473px;
+}
+#footer .copy {
+	background-image: url("#{resource['img:greenfield-logo.png']}");
+	background-position: right center;
+	background-repeat: no-repeat;
+	float: right;
+	height: 33px;
+	padding: 19px 135px 1px 0;
+	color: #2D3838;
+}
+.bxbut {
+	background-color: #FBFBFB;
+	margin: -10px 0 -19px -19px !important;
+	padding: 0 19px 0 451px;
+	position: relative;
+}
+.error
+{
+    background-image: url("#{resource['img:error_icon.png']}");
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: red !important;
+    font: 25px arial !important;
+    height: 53px;
+    margin: -20px 2px 3px 4px !important;
+    padding: 39px 2px 0 47px;
+}
+.frmcont .custinfocrttbl
+{
+	    background-color: transparent;
+    border: 0 none;
+    position: static;
+}
+.bbdy
+{
+	   background-color: #FBFBFB;
+    float: left;
+}

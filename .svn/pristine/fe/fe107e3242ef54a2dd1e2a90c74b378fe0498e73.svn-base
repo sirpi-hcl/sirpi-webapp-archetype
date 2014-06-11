@@ -1,0 +1,36 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<!-- Configure Spring Security -->
+	<security:http auto-config="true" use-expressions="true">
+		<security:form-login login-page="/web/home" login-processing-url="/web/loginProcess" 
+			default-target-url="/web/main" authentication-failure-url="/web/home?login_error=1" />
+		<security:logout logout-url="/web/logout" logout-success-url="/web/logoutSuccess" />
+		
+		<security:intercept-url pattern="/secure" method="POST" access="hasRole('ROLE_SUPERVISOR')"/>
+	</security:http>
+    
+	<!--
+		Define local authentication provider, a real app would use an external provider (JDBC, LDAP, CAS, etc)
+	-->
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<!-- <security:password-encoder hash="md5" /> -->
+			<security:user-service>
+				<security:user name="superuser" password="superuser" authorities="ROLE_USER, ROLE_SUPERVISOR" />
+				<security:user name="test" password="test" authorities="ROLE_USER" />
+			</security:user-service>
+		</security:authentication-provider>
+	</security:authentication-manager>	
+
+</beans>

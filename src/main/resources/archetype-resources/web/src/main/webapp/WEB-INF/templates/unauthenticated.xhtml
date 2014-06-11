@@ -1,0 +1,31 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>greenField&trade; Startup application</title>
+	<link rel="shortcut icon" type="image/x-icon"
+		href="#{request.contextPath}/resources/img/favicon.ico" />
+	<h:outputStylesheet library="css" name="greenfield-theme.css" />
+</h:head>
+
+<h:body>
+	<div class="bbdy">
+		<ui:insert name="header">
+			<ui:include src="../templates/home_header.xhtml" />
+		</ui:insert>
+		<ui:insert name="content">
+			<ui:include src="../templates/content.xhtml" />
+		</ui:insert>
+		<ui:insert name="footer">
+			<ui:include src="../templates/footer.xhtml" />
+		</ui:insert>
+	</div>
+</h:body>
+</html>

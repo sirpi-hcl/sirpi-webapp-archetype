@@ -1,0 +1,70 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:faces="http://www.springframework.org/schema/faces"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       	http://www.springframework.org/schema/faces http://www.springframework.org/schema/faces/spring-faces-2.4.xsd"> 
+ 
+
+	<!-- Faces resources declaration -->
+	<faces:resources />
+
+
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+		<property name="order" value="1" />
+		<property name="flowRegistry" ref="flowRegistry" />
+	</bean>
+
+	<!-- Maps logical view names to Facelet templates in /WEB-INF (e.g. 'search' 
+		to '/WEB-INF/search.xhtml' -->
+	<bean id="faceletsViewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass" value="org.springframework.faces.mvc.JsfView" />
+		<property name="prefix" value="/WEB-INF/page/" />
+		<property name="suffix" value=".xhtml" />
+	</bean>
+
+	<!-- Dispatches requests mapped to org.springframework.web.servlet.mvc.Controller 
+		implementations -->
+	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
+
+	<!-- Dispatches requests mapped to flows to FlowHandler implementations -->
+	<bean class="org.springframework.faces.webflow.JsfFlowHandlerAdapter">
+		<property name="flowExecutor" ref="flowExecutor" />
+	 
+	</bean>
+
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="order" value="0" />
+		<property name="mappings">
+			<value>
+				home=staticContentViewController
+			</value>
+		</property>
+	</bean>
+
+	<bean id="staticContentViewController"
+		class="org.springframework.web.servlet.mvc.UrlFilenameViewController">
+		<property name="suffix" value="Page" />
+	</bean>
+
+
+	<bean name="richfacesResourceHandler"
+		class="org.springframework.faces.webflow.JsfResourceRequestHandler" />
+
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="order" value="0" />
+		<property name="mappings">
+			<value>
+				/rfRes/**=richfacesResourceHandler
+			</value>
+		</property>
+	</bean>
+
+
+</beans>

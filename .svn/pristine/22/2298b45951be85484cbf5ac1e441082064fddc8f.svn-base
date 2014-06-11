@@ -1,0 +1,372 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	width:960px;
+	margin:0 auto;
+	border:0;
+	padding :0;
+	background-color:#444;
+}
+.sprite {
+	background:url("#{resource['img:sprite2.png']}") top left no-repeat;
+}
+.logo_sprite {
+	background-position: -7px -220px;
+	height: 52px;
+	width: 163px;
+	color: transparent;
+}
+.f1 {
+	color: transparent;
+	font-size:0;
+}
+.f2 {
+	color: transparent;
+	font-size:0;
+}
+.f3 {
+	color: transparent;
+	font-size:0;
+}
+.crt {
+	background-position: -8px -9px;
+	color: transparent;
+	height: 30px;
+	width: 103px;
+	font-size:0;
+	margin: -46px 0 0 295px;
+	position: absolute;
+}
+.edt {
+	background-position: -8px -41px;
+	color: transparent;
+	float: right;
+	height: 30px;
+	width: 103px;
+	font-size:0;
+}
+#header {
+	float: right;
+	width: 840px;
+	background-color:#fff;
+}
+#header .logo {
+	float:left;
+	margin:-10px 0 0 0;
+}
+#header .cont {
+	font:bold 11px arial;
+	color:#666;
+	float:right;
+	padding-right:5px;
+}
+.cont a {
+	color:#666;
+}
+#banner {
+	background-image: url("#{resource['img:thm2_gf_mainbanner.jpg']}");
+	background-repeat: no-repeat;
+	float: left;
+	height: 235px;
+	margin: 0 2px 0 120px;
+	width: 659px;
+}
+#login {
+	background-image: url("#{resource['img:thm2_lgn_box.png']}");
+	height: 285px;
+	margin: 293px 2px 3px 471px;
+	position: absolute;
+	width: 308px;
+}
+.lgnhdr {
+	color: #FFFF00;
+	font: lighter 29px "Segoe UI Light";
+	font: lighter 29px "Segoe UI";
+	margin-left: 18px;
+}
+.lgnfld {
+	font:normal 12px arial;
+	color:#C0E096;
+	padding:5px 0 5px 0;
+}
+.lgnfrm {
+	padding-left: 22px;
+}
+.lgnfrm input {
+	border: 1px solid #EEEEEE;
+	height: 20px;
+	width: 200px;
+}
+.lgnbtn {
+	background-color: #324914;
+	border: medium none !important;
+	color: #FFFFFF;
+	font: bold 12px arial;
+	height: 22px !important;
+	margin-top: 10px;
+	width: 58px !important;
+}
+#login p {
+	color: #464930;
+	font: 11px/20px arial;
+	margin-top: 3px;
+	padding: 23px;
+}
+.lgncont1 {
+	height: 285px;
+	width: 350px;
+	background-image:url("#{resource['img:thm2_overvu.png']}");
+	float:left;
+	margin-left: 121px;
+}
+.lgncont2 {
+	background-image: url("#{resource['img:thm2_ftrbar.png']}");
+	float: right;
+	height: 520px;
+	margin: 59px 0 3px 779px;
+	position: absolute;
+	top: 0;
+	width: 182px;
+}
+.lgncont1 h1, .lgncont2 h1 {
+	color: #fff;
+	font: lighter 29px "Segoe UI";
+	padding: 0 0 0 14px;
+	margin-top:0;
+}
+.lgncont1 p {
+	color: #EEEEEE;
+	font: 11px/25px arial;
+	padding: 1px 22px 3px 18px;
+	text-align: left;
+}
+.lgncont2 p {
+	color: #fff;
+	font: 11px/15px arial;
+	text-align: left;
+	border-bottom: 1px dotted #FFFFFF;
+	padding: 1px 19px 11px 17px;
+}
+.lgncont2 img {
+	float: left;
+	padding-right: 10px;
+}
+.sprtr {
+	display:none;
+}
+#footer {
+	background-color: #222222;
+	color: #CCCCCC;
+	font: 10px arial;
+	padding: 10px;
+	float: right;
+	text-align: right;
+	width: 820px;
+}
+.menu {
+	background-color: #232F19;
+	float: left;
+	margin: 0 0 0 120px;
+	padding: 5px 5px 0;
+	width: 830px;
+}
+.menu a {
+	text-decoration:none;
+	color:#fff;
+}
+.menu dd {
+	border-right: 1px solid #516C39;
+	float: left;
+	font: bold 11px segoe UI;
+	height: 26px;
+	margin: 0;
+	text-align: center;
+	width: 92px;
+}
+.subbg {
+	float: left;
+	width: 960px;
+}
+.lftmenu {
+	background-image: url("#{resource['img:thm2_lft_menu.png']}");
+	background-repeat: repeat-y;
+	float: left;
+	height: 436px;
+	width: 120px;
+}
+.cntrmenu {
+	background-color: #5C8527;
+	float: left;
+	width: 840px;
+}
+.lftmenu dd {
+	font: 14px arial;
+	margin-left: 11px;
+	padding: 10px 0;
+}
+.lftmenu a {
+	text-decoration:none;
+	color:#fff;
+}
+.lftmenu .selec {
+	background-color:#598126;
+	margin: 0 0 0 3px;
+	padding: 6px;
+	width: 130px;
+}
+.cntrmenu h1 {
+	color: #FFFF00;
+	font: lighter 29px "Segoe UI";
+	margin: 10px 0 0 20px;
+}
+.dshbrd {
+	float: left;
+	width: 840px;
+}
+.frmbdy {
+	float:left;
+	width: 773px;
+}
+.custlist {
+	background-image:url("#{resource['img:thm2_usrlst_bg.png']}");
+	float: left;
+	width: 820px;
+	height:208px;
+	padding: 10px;
+}
+.custdetls {
+	background-image:url("#{resource['img:thm2_custinfo_bg.png']}");
+	float: left;
+	padding: 10px;
+	width: 820px;
+	height: 244px;
+}
+.csthdng {
+	float: left;
+	padding-bottom: 10px;
+	width: 98%;
+	margin-left: 16px;
+}
+.custlist h2 {
+	color: #eee;
+	float: left;
+	font: lighter 19px "Segoe UI";
+	margin: 0 0 0 12px;
+	width:50%;
+}
+.custlist img {
+	float:right;
+}
+.cstmls {
+	float: left;
+	height: 164px;
+	overflow: auto;
+	width: 100%;
+	margin-top: 15px;
+	width: 691px;
+}
+ul.custmr {
+	margin:0;
+}
+.custmr li {
+	color: #DFFFBF;
+	font: 13px arial;
+	list-style-image: url("#{resource['img:thm2_silhoute.png']}");
+	padding: 5px 0;
+	width: 200px;
+	float:left;
+}
+.custdetls h2 {
+	color: #fff;
+	float: left;
+	font: lighter 29px "Segoe UI";
+	margin: 0;
+}
+.custdetls img {
+	float:right;
+}
+/*view starts here*/
+.custinfotbl {
+	color: #878F3F;
+	float: left;
+	font: lighter 14px "Segoe UI";
+	height: 176px;
+	margin-left: 18px;
+	width: 809px;
+	display:block;
+}
+.custinfotbl dd {
+	float: left;
+	margin: 0;
+	width: 216px;
+}
+.custinfotbl div {
+	font: normal 18px "Segoe UI"!important;
+	color:#555A27;
+	margin: 0 0 20px;
+}
+/*view ends here*/
+/*create/edit starts here*/
+.custinfocrttbl {
+	color: #878F3F;
+	float: left;
+	font: lighter 14px "Segoe UI";
+	height: 176px;
+	margin-left: 18px;
+	width: 809px;
+}
+.custinfocrttbl dd {
+	float: left;
+	margin: 0;
+	width: 216px;
+}
+.custinfocrttbl div {
+	font: normal 18px "Segoe UI"!important;
+	color:#555A27;
+	margin: 0 0 20px;
+}
+.custinfocrttbl input[type="text"] {
+	border: 1px solid #CCCCCC;
+	color: #666666;
+	font: 16px "Segoe UI" !important;
+	padding: 0 0 0 5px;
+}
+.custinfocrttbl input[type="button"] {
+	background-color: #333333;
+	border: 1px solid #333333;
+	color: #FFFFFF;
+	font: bold 11px "Segoe UI" !important;
+	height: 26px;
+	padding: 4px;
+	width: 55px;
+}
+#litbx {
+	display: none;
+}
+/*create/edit ends here*/
+.frmtbl {
+	font: normal 12px "arial";
+	color:#777;
+	margin-top: 20px;
+}
+.frmtbl td {
+	padding:10px;
+	text-align:right;
+}
+.frmtbl input[type="text"] {
+	border: 1px solid #EEEEEE;
+	height: 20px;
+	width: 200px;
+	float:left;
+}
+.frmtbl .lgnbtn {
+	text-align:center;
+}
+.menu .select a {
+	color:#fff;
+}
+.menu .select {
+	background-color: #5C8427;
+}
+.selcust {
+}

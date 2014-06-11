@@ -1,0 +1,140 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package}.entity.agent;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.Cacheable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
+
+
+
+/**
+ * The persistent class for the AGENT database table.
+ * 
+ */
+@Entity
+@Table(name="AGENT")
+@Cacheable
+public class Agent implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ID", nullable=false)
+	private Long id;
+	
+	@Column(name="AGENT_ID", nullable=false, length=16)
+	private String agentId;
+
+	@Column(name="AGENT_EMAIL_ADDR", length=36)
+	private String agentEmailAddr;
+
+	@Column(name="AGENT_MOBILE_NO", length=10)
+	private String agentMobileNo;
+
+	@Column(name="AGENT_NAME", length=50)
+	private String agentName;
+
+	@Column(name="COMM_CODE", length=10)
+	private String commCode;
+
+	@Column(name="REP_NO", length=12)
+	private String repNo;
+
+	@Column
+	private String source;
+
+	public Agent() {
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getAgentId() {
+		return agentId;
+	}
+
+	public void setAgentId(String agentId) {
+		this.agentId = agentId;
+	}
+
+	public String getAgentEmailAddr() {
+		return agentEmailAddr;
+	}
+
+	public void setAgentEmailAddr(String agentEmailAddr) {
+		this.agentEmailAddr = agentEmailAddr;
+	}
+
+	public String getAgentMobileNo() {
+		return agentMobileNo;
+	}
+
+	public void setAgentMobileNo(String agentMobileNo) {
+		this.agentMobileNo = agentMobileNo;
+	}
+
+	public String getAgentName() {
+		return agentName;
+	}
+
+	public void setAgentName(String agentName) {
+		this.agentName = agentName;
+	}
+
+	public String getCommCode() {
+		return commCode;
+	}
+
+	public void setCommCode(String commCode) {
+		this.commCode = commCode;
+	}
+
+	
+	public String getRepNo() {
+		return repNo;
+	}
+
+	public void setRepNo(String repNo) {
+		this.repNo = repNo;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+	
+	
+	public String getSummaryFields()
+	{
+	     return "agentName,agentId";
+	}
+	
+
+}

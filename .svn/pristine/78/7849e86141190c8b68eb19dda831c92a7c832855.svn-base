@@ -1,0 +1,35 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/webflow
+            http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+
+	<view-state id="loginViewState" view="loginPage">
+
+		<on-entry>
+			<evaluate           
+				expression="new ${package}.web.ui.beans.authentication.LoginCredential()"
+				result="viewScope.loginCredential" />
+		</on-entry>
+
+
+		<transition on="verifyCredentials" to="validateCredentials">
+			<evaluate expression="authenticationService.challengeUser(loginCredential)"
+				result="flowScope.userDetails" />
+		</transition>
+	</view-state>
+
+	<decision-state id="validateCredentials">
+		<if test="flowScope.userDetails == null" then="invalidCredentialsState"
+			else="AgentViewState" />
+	</decision-state>
+
+	<end-state id="AgentViewState" view="flowRedirect:dashboard" />
+	<end-state id="invalidCredentialsState" view="invalidCredentialsPage" />
+</flow>

@@ -1,0 +1,6 @@
+INSERT INTO AGENT VALUES(1,'A940','Michael Findel','A','R01','9489834934','mike@yahoo.com','2013-02-06','C0');
+INSERT INTO AGENT VALUES(2,'A940','Michael Findel','A','R01','9489834934','mike@yahoo.com','2013-02-06','C0');
+INSERT INTO AGENT VALUES(3,'A940','Michael Findel','A','R01','9489834934','mike@yahoo.com','2013-02-06','C0');
+INSERT INTO AGENT VALUES(4,'A940','Michael Findel','A','R01','9489834934','mike@yahoo.com','2013-02-06','C0');
+INSERT INTO AGENT VALUES(5,'A940','Michael Findel','A','R01','9489834934','mike@yahoo.com','2013-02-06','C0');
+INSERT INTO AGENT VALUES(6,'A940','Michael Findel','A','R01','9489834934','mike@yahoo.com','2013-02-06','C0');

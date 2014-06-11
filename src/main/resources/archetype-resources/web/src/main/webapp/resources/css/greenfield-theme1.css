@@ -1,0 +1,425 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	width:960px;
+	margin:0 auto;
+	border:0;
+	padding :0;
+}
+.sprite {
+	background:url("#{resource['img:sprite.png']}") top left no-repeat;
+}
+.logo_sprite {
+	background-position: -7px -220px;
+	height: 52px;
+	width: 163px;
+	color: transparent;
+}
+.f1 {
+	background-position: -9px -76px;
+	float: left;
+	height: 41px;
+	width: 69px;
+	color: transparent;
+	font-size:0;
+}
+.f2 {
+	background-position: -9px -122px;
+	float: left;
+	height: 41px;
+	width: 69px;
+	color: transparent;
+	font-size:0;
+}
+.f3 {
+	background-position: -9px -167px;
+	float: left;
+	height: 41px;
+	width: 69px;
+	color: transparent;
+	font-size:0;
+}
+.crt {
+	background-position: -8px -9px;
+	color: transparent;
+	float: right;
+	height: 30px;
+	width: 103px;
+	font-size:0;
+}
+.edt {
+	background-position: -8px -41px;
+	color: transparent;
+	float: right;
+	height: 30px;
+	width: 103px;
+	font-size:0;
+}
+#header {
+	float: left;
+	width: 960px;
+}
+#header .logo {
+	float:left;
+	margin:-10px 0 0 0;
+}
+#header .cont {
+	font:bold 11px arial;
+	color:#666;
+	float:right;
+	padding-right:5px;
+}
+.cont a {
+	color:#666;
+}
+
+a.formLink {
+	color: #666666;
+	font-family: verdana;
+	font-size: 10px;
+}
+
+a.formLink:hover{
+	color: #9A9A9A;
+	font-family: verdana;
+	font-size: 10px;
+}
+
+#banner {
+	background-image:url("#{resource['img:gf_mainbanner.jpg']}");
+	background-repeat:no-repeat;
+	width:960px;
+	height:235px;
+	float:left;
+}
+#login {
+	background-color: #FFFFFF;
+	background-position: -176px -14px;
+	border: 1px solid #EEEEEE;
+	float: right;
+	height: 286px;
+	margin: -141px 14px 0 0;
+	width: 247px;
+}
+.lgnhdr {
+	color: #06AB9E;
+	font: lighter 29px "Segoe UI Light";
+	font: lighter 29px "Segoe UI";
+	margin-left: 6px;
+}
+.lgnfld {
+	font:bold 12px arial;
+	color:#aaa;
+	padding:5px 0 5px 0;
+}
+.lgnfrm {
+	padding: 10px;
+}
+.lgnfrm input {
+	border: 1px solid #EEEEEE;
+	height: 20px;
+	width: 200px;
+}
+.lgnbtn {
+	background-color: #222222;
+	border: 0 none;
+	color: #FFFFFF;
+	font: bold 12px arial;
+	height: 27px !important;
+	margin-top: 10px;
+	width: 73px !important;
+}
+#login p {
+	color: #666666;
+	font: 11px arial;
+	margin: 0;
+	padding: 10px;
+}
+.lgncont1 {
+	width: 300px;
+	float:left;
+}
+.lgncont2 {
+	float: left;
+	width: 300px;
+}
+.lgncont1 h1, .lgncont2 h1 {
+	border-bottom: 1px solid #EEEEEE;
+	color: #06AB9E;
+	font: lighter 29px "Segoe UI";
+}
+.lgncont1 p {
+	color: #878787;
+	font: 11px/20px arial;
+	text-align: justify;
+}
+.lgncont2 p {
+	color: #878787;
+	font: 11px/20px arial;
+	text-align: justify;
+}
+.lgncont2 img {
+	float: left;
+	padding-right: 10px;
+}
+.sprtr {
+	background-position: -132px -6px;
+	background-repeat: no-repeat;
+	float: left;
+	height: 202px;
+	margin: 40px 17px 0 40px;
+	width: 6px;
+}
+#footer {
+	background-color: #222222;
+	color: #CCCCCC;
+	font: 10px arial;
+	padding: 10px;
+	float: left;
+	text-align: right;
+	width: 940px;
+}
+.menu {
+	background-color: #333333;
+	float: left;
+	margin: 0;
+	padding: 5px 5px 0 5px;
+	width: 950px;
+}
+.menu a {
+	text-decoration:none;
+	color:#fff;
+}
+.menu dd {
+	border-right: 1px solid #CCCCCC;
+	float: left;
+	font: bold 13px segoe UI;
+	height: 26px;
+	margin: 0;
+	text-align: center;
+	width: 92px;
+}
+.subbg {
+	background-image:url("#{resource['img:gf_sub_pg_bg.jpg']}");
+	background-repeat:no-repeat;
+	background-position:top;
+	float: left;
+	width: 960px;
+}
+.lftmenu {
+	float:left;
+	width:153px;
+	margin-left: 17px;
+	background-image:url("#{resource['img:gf_lftmenu_bg.jpg']}");
+	background-repeat:repeat-y;
+}
+.cntrmenu {
+	float:left;
+	width:773px;
+	margin-right: 17px;
+}
+.lftmenu dd {
+	font: 14px arial;
+	margin-left: 11px;
+	padding: 10px 0;
+}
+.lftmenu a {
+	text-decoration:none;
+	color:#000;
+}
+.cntrmenu h1 {
+	border-bottom: 1px solid #EEEEEE;
+	color: #06AB9E;
+	font: lighter 29px "Segoe UI";
+	margin: 10px 0 0;
+}
+.dshbrd {
+	float:left;
+	width: 773px;
+	background-image:url("#{resource['img:gf_dshbrd_bg.jpg']}");
+	background-repeat: repeat-y;
+}
+.frmbdy {
+	float:left;
+	width: 773px;
+}
+
+.dashboard_title{
+	float:left;
+	width: 773px;
+	padding-bottom: 10px;
+	border-bottom: 1px dotted #CCCCCC;
+}
+
+.custlist {
+	float: left;
+	width: 402px;
+	padding: 10px;
+}
+.custdetls {
+	float: left;
+	padding: 10px;
+	width: 329px;
+}
+.csthdng {
+	border-bottom: 1px dotted #CCCCCC;
+	float: left;
+	padding-bottom: 10px;
+	width: 100%;
+}
+.custlist h2 {
+	color: #535353;
+	float: left;
+	font: lighter 19px "Segoe UI";
+	margin: 0;
+}
+.custlist img {
+	float:right;
+}
+.cstmls {
+	float: left;
+	height: 283px;
+	overflow: auto;
+	width: 100%;
+	margin-top: 15px;
+}
+ul.custmr {
+	margin:0;
+}
+.custmr li {
+	color: #333;
+	font: 14px arial;
+	list-style-image: url("#{resource['img:gf_silhoute.jpg']}");
+	padding: 5px 0;
+}
+.custdetls h2 {
+	color: #535353;
+	float: left;
+	font: lighter 19px "Segoe UI";
+	margin: 0;
+}
+
+
+.custmr a{
+	color:#333;
+	text-decoration: none;
+}
+
+.custmr a:hover{
+	color:#313234;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+.custdetls img {
+	float:right;
+}
+/*view starts here*/
+.custinfotbl {
+	color: #878F3F;
+	float: left;
+	font: lighter 14px "Segoe UI";
+	margin-left: 3px;
+	width: 338px;
+}
+.custinfotbl dd {
+	float: left;
+	margin: 0;
+	width: 169px;
+}
+.custinfotbl div {
+	font: normal 18px "Segoe UI"!important;
+	color:#555A27;
+	margin: 0 0 20px;
+}
+/*view ends here*/
+/*create/edit starts here*/
+.custinfocrttbl {
+	background-color: #FFFFFF;
+	color: #878F3F;
+	float: left;
+	font: lighter 14px "Segoe UI";
+	left: 373px;
+	margin: 0 auto;
+	padding: 20px;
+	top: 145px;
+	width: 648px;
+}
+.custinfocrttbl dd {
+	float: left;
+	margin: 0;
+	width: 216px;
+}
+.custinfocrttbl div {
+	font: normal 18px "Segoe UI"!important;
+	color:#555A27;
+	margin: 0 0 20px;
+}
+
+.custinfocrttbl input[type="text"] {
+	border: 1px solid #CCCCCC;
+	color: #666666;
+	font: 11px "Segoe UI" !important;
+	padding: 2px;
+}
+
+.custinfocrttbl select {
+	border: 1px solid #CCCCCC;
+	color: #666666;
+	font: 11px "Segoe UI" !important;
+	padding: 2px;
+	width:150px;
+}
+
+.custinfocrttbl input[type="button"] {
+	background-color: #333333;
+	border: 1px solid #333333;
+	color: #FFFFFF;
+	font: bold 11px "Segoe UI" !important;
+	height: 26px;
+	padding: 4px;
+	width: 55px;
+}
+
+#litbx {
+	/*display: none;*/
+	height: 100%;
+	left: 0;
+	/* position: absolute; */
+	top: 0;
+	width: 100%;
+	background-image:url("#{resource['img:lit_box.png']}");
+	background-repeat:repeat;
+}
+/*create/edit ends here*/
+.frmtbl {
+	font: normal 12px "arial";
+	color:#777;
+	margin-top: 20px;
+}
+.frmtbl td {
+	padding:10px;
+	text-align:right;
+}
+.frmtbl input[type="text"] {
+	border: 1px solid #EEEEEE;
+	height: 20px;
+	width: 200px;
+	float:left;
+}
+.frmtbl .lgnbtn {
+	text-align:center;
+}
+.lftmenu .select {
+	background-color: #FFFFFF;
+	border: 1px solid #EEEEEE;
+	margin: 0 0 0 3px;
+	padding: 6px;
+	width: 130px;
+}
+.menu .select a {
+	color:#333;
+}
+.menu .select {
+	background-color: #FFFFFF;
+}

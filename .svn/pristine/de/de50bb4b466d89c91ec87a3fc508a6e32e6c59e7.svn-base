@@ -1,0 +1,58 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- Context based configuration -->
+	<context:annotation-config />
+	
+	<context:property-placeholder location="classpath*:/META-INF/spring/jdbc.properties"/>
+
+	<!-- JPA Repositories configuration -->
+	<jpa:repositories base-package="${package}.repository"
+		factory-class="${package}.repository.impl.BaseRepositoryFactoryBean" />
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<!-- Enables transaction based annotations -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<!-- <property name="persistenceUnitName" value="GREENFIELD" /> -->
+		<property name="dataSource" ref="datasource" />
+		<property name="packagesToScan" value="${package}.entity" />
+		<!-- JPA Vendor Adapter = HibernateJpaVendorAdapter database type = HSQL -->
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="database" value="${database.type}" />
+				<!-- The following property needs to be set true to create tables. -->
+				<property name="generateDdl" value="false" />
+				<property name="databasePlatform" value="org.hibernate.dialect.HSQLDialect"/>
+				<!-- <property name="showSql" value="true" /> -->
+			</bean>
+		</property>
+		
+	</bean>
+
+	<bean id="datasource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<jdbc:initialize-database data-source="datasource" enabled="true"> 
+		<jdbc:script location="classpath*:/META-INF/scripts/${rootArtifactId}.sql" /> 
+	</jdbc:initialize-database>
+</beans>

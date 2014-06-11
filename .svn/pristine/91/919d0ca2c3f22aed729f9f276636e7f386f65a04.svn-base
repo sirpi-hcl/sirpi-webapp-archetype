@@ -1,0 +1,10 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package}.entity;
+
+/**
+ * Base Entity is a generic repository
+ * 
+ * */
+public interface BaseEntity{}

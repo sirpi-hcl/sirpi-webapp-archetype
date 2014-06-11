@@ -1,0 +1,6 @@
+jdbc.driverClassName=org.h2.Driver
+#jdbc.url=jdbc:h2:mem:gfdb;DB_CLOSE_DELAY=-1;MVCC=TRUE
+jdbc.url=jdbc:h2:file:c:/packages/greenfield/data/gfdb;DB_CLOSE_DELAY=-1;MVCC=TRUE
+jdbc.username=greenfield
+jdbc.password=
+dialect=org.hibernate.dialect.H2Dialect

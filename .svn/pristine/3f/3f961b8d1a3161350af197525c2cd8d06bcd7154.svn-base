@@ -1,0 +1,96 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package}.web.vo;
+
+import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Date;
+
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.beanutils.converters.DateConverter;
+
+public abstract class BaseVO<E extends Object> implements Serializable {
+
+	private Class<E> entity;
+
+	protected BaseVO(Class<E> entity) {
+		this.entity = entity;
+
+		// Setting a default converter for date.
+		Date defaultDate = null;
+
+		DateConverter dateConverter = new DateConverter(defaultDate);
+
+		ConvertUtils.register(dateConverter, Date.class);
+	}
+
+	public E toEntity() {
+		E entity = null;
+
+		try {
+			entity = this.entity.newInstance();
+
+			BeanUtils.copyProperties(entity, this);
+
+		} catch (Exception ie) {
+			ie.printStackTrace();
+		}
+
+		return entity;
+	}
+
+	public Object toDTO(E entity) {
+
+		try {
+			BeanUtils.copyProperties(this, entity);
+		} catch (InvocationTargetException ite) {
+			ite.printStackTrace();
+		} catch (IllegalAccessException iae) {
+			iae.printStackTrace();
+		}
+		return this;
+
+	}
+
+	/*
+	 * public E toEntity(String... props) throws IllegalAccessException,
+	 * InvocationTargetException{ E entity = null;
+	 * 
+	 * try{ entity = this.entity.newInstance();
+	 * 
+	 * copyProperties(model, entity, props); } catch (InstantiationException ie)
+	 * { ie.printStackTrace(); } catch (InvocationTargetException ite) {
+	 * ite.printStackTrace(); } catch (IllegalAccessException iae) {
+	 * iae.printStackTrace(); } catch (NoSuchMethodException e) { // TODO
+	 * Auto-generated catch block e.printStackTrace(); } return entity; }
+	 */
+
+	public void copyProperties(Object src, Object dest, String... properties)
+			throws IllegalAccessException, InvocationTargetException,
+			NoSuchMethodException {
+		String[] arrProp;
+		String srcProperty;
+		String destProperty;
+
+		// Iterate the string array
+		for (String property : properties) {
+			arrProp = property.split(" ");
+
+			if (arrProp.length == 2) {
+				srcProperty = arrProp[0];
+				destProperty = arrProp[1];
+			} else {
+				srcProperty = destProperty = property;
+			}
+
+			// Set the values for properties
+			BeanUtils.setProperty(dest, destProperty,
+					BeanUtils.getProperty(src, srcProperty));
+
+		}
+
+	}
+
+}

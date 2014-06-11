@@ -1,0 +1,72 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="../templates/unauthenticated.xhtml">
+	<ui:define name="content">
+	<div id="login">
+		<div class="lgnhdr">Login</div>
+		<div>
+			<h:form id="form" class="lgnfrm"> 
+				<div class="lgnfld">Login ID</div>
+				<div>
+					<h:inputText id="username" value="${symbol_dollar}{loginCredential.loginUserId}" onfocus="this.value='';" requiredMessage="Please enter a username" />
+					<rich:jQuery selector="${symbol_pound}username" name="applyMaskToUserName" query="mask('99:99', {placeholder:'test masking '})" />
+				</div>
+				<div class="lgnfld">Password</div>
+				<div>
+					<h:inputSecret id="password" value="${symbol_dollar}{loginCredential.password}" requiredMessage="Please enter a password"
+							onfocus="this.value='';" />
+				</div>
+				<div class="lgnfld">
+					<h:commandButton id="loginControl" value="login" styleClass="lgnbtn" action="verifyCredentials"/>
+				</div>
+			</h:form>
+			<p>greenField&trade; is a Design Driven RAD tool for java based
+				application. It provides a reference architecture with best of
+				cutting edge technologies and enforces best practices to be in
+				place.</p>
+		</div>
+	</div>
+	<div class="lgncont1">
+		<h1>Overview</h1>
+		<p>To reduce the learning curve and increase the ramp up time for
+			new developers, standards and best practices based reference
+			architecture is developed as part of "GreenField" initiative. The
+			architecture of GreenField applies the principle of convention over
+			configuration cutting across all the layers. It also provides custom
+			eclipse plugins, which works behind the scenes and accelerates the
+			application development in a non-intrusive fashion.</p>
+	</div>
+	<div class="sprtr"></div>
+	<div class="lgncont2">
+		<h1>Features</h1>
+		<p>
+			
+			<h:graphicImage library="img" name="gf_feature1.gif" width="60" height="41" />greenField&trade;
+			is a Design Driven RAD tool for java based application.
+		</p>
+		<p>
+			<h:graphicImage library="img" name="gf_feature2.gif" width="60" height="41" />greenField&trade;
+			is a Design Driven RAD tool for java based application. It provides.
+		</p>
+		<p>
+			<h:graphicImage library="img" name="gf_feature3.gif" width="60" height="41" />greenField&trade;
+			is a Design Driven RAD tool for java based application. It provides.
+		</p>
+	</div>
+	
+	</ui:define>
+</ui:composition>
+
+</html>
+
+

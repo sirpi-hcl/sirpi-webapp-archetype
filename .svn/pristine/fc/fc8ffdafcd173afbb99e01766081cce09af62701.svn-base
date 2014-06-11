@@ -1,0 +1,26 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering 
+  SYSTEM "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+<hibernate-reverse-engineering>
+
+	<type-mapping>
+		<sql-type jdbc-type="VARCHAR" length='1' hibernate-type="yes_no" />
+		<sql-type jdbc-type="NUMERIC" precision='1' hibernate-type="boolean" />
+		<sql-type jdbc-type="NUMERIC" hibernate-type="double" />
+		<sql-type jdbc-type="BIGINT" not-null="true"  hibernate-type="Long" />
+		<sql-type jdbc-type="INTEGER" not-null="true"  hibernate-type="Long" />
+		<sql-type jdbc-type="NUMERIC" not-null="true"  hibernate-type="Long" /> 
+	</type-mapping>
+
+	<table-filter match-name=".*" package="${package}.entity.${rootArtifactId}">
+		<meta attribute="extra-import">${package}.entity.BaseEntity</meta>
+		<meta attribute="implements">BaseEntity</meta>
+	</table-filter>
+
+	<!-- exclude all tables from the schema SCHEMA in catalog BAD. -->
+	<table-filter match-catalog="BAD" match-schema="SCHEMA"	match-name=".*" exclude="true" />
+
+</hibernate-reverse-engineering>

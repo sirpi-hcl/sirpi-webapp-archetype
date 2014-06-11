@@ -1,0 +1,91 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+<ui:composition template="../templates/authenticated.xhtml">
+	<ui:define name="content">
+	
+		<div class="cntrmenu">
+			<h1>Create Agent</h1>
+		</div>
+		<div class="frmbdy">
+			<h:form>
+				<div id="litbx">
+					<dl class="custinfocrttbl" id="custedit">
+						<dd>
+							ID
+							<div>
+								<h:inputText id="agentId" required="true"
+									requiredMessage="Please enter Agent ID"
+									value="#{flowScope.selectedAgentVO.agentId}" />
+								<h:message for="agentId" />
+							</div>
+						</dd>
+						<dd>
+							Name
+							<div>
+								<h:inputText id="agentName" required="true"
+									value="#{flowScope.selectedAgentVO.agentName}" />
+								<h:message for="agentName" />
+							</div>
+						</dd>
+						<dd>
+							Rep Number
+							<div>
+								<h:inputText id="repNo" required="true"
+									value="#{flowScope.selectedAgentVO.repNo}" />
+							</div>
+						</dd>
+						<dd>
+							Comm Code
+							<div>
+								<h:inputText id="commCode"
+									value="#{flowScope.selectedAgentVO.commCode}" />
+							</div>
+						</dd>
+						<dd>
+							Source
+							<div>
+								<h:inputText id="source"
+									value="#{flowScope.selectedAgentVO.source}" />
+							</div>
+						</dd>
+						<dd>
+							Mobile Number
+							<div>
+								<h:inputText id="mobile"
+									value="#{flowScope.selectedAgentVO.agentMobileNo}" />
+							</div>
+						</dd>
+						<dd>
+							Email ID
+							<div>
+								<h:inputText id="email"
+									value="#{flowScope.selectedAgentVO.agentEmailAddr}" />
+							</div>
+						</dd>
+						<dd>
+							<div>
+								<h:commandButton styleClass="lgnbtn" id="cmdSubmit"
+									value="Submit" action="saveAgent" />
+								&nbsp;
+								<h:commandButton styleClass="lgnbtn" id="cmdCancel"
+									value="Cancel" action="cancel" />
+							</div>
+						</dd>
+					</dl>
+				</div>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

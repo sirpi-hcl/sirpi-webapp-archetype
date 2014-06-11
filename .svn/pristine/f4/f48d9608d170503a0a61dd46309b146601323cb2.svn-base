@@ -1,0 +1,67 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+
+
+<ui:composition template="../templates/authenticated.xhtml">
+	<ui:define name="content">
+	
+		<div class="cntrmenu">
+			<h1>Create Agent</h1>
+		</div>
+		<div class="frmbdy">
+			<h:form>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" class="frmtbl">
+					<tr>
+						<td>ID <span class="mandate">*</span></td>
+						<td><h:inputText id="agentId" required="true" requiredMessage="Please enter Agent ID" value="#{flowScope.selectedAgentVO.agentId}" />
+							<h:message for="agentId"  />
+						</td>
+						<td>Name <span class="mandate">*</span></td>
+						<td><h:inputText id="agentName" required="true" value="#{flowScope.selectedAgentVO.agentName}"/>
+							<h:message for="agentName" />
+						</td>
+					</tr>
+					<tr>
+						<td>Rep Number <span class="mandate">*</span></td>
+						<td><h:inputText id="repNo" required="true" value="#{flowScope.selectedAgentVO.repNo}" />
+							<h:message for="repNo" />
+						</td>
+						<td>Comm Code</td>
+						<td><h:inputText id="commCode" value="#{flowScope.selectedAgentVO.commCode}" /></td>
+					</tr>
+					<tr>
+						<td>Source</td>
+						<td><h:inputText id="source" value="#{flowScope.selectedAgentVO.source}" /></td>
+						<td>Mobile Number</td>
+						<td><h:inputText id="mobile" value="#{flowScope.selectedAgentVO.agentMobileNo}" /></td>
+					</tr>
+					<tr>
+						<td>Email ID</td>
+						<td><h:inputText id="email" value="#{flowScope.selectedAgentVO.agentEmailAddr}" /></td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+						<td colspan="2">
+								<h:commandButton styleClass="lgnbtn" id="cmdSubmit" value="Submit" action="saveAgent"/>&nbsp;
+								<h:commandButton styleClass="lgnbtn" id="cmdCancel" value="Cancel" action="cancel" />
+						</td>
+					</tr>
+				</table>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

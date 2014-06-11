@@ -1,0 +1,56 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/webflow
+            http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+	<on-start>
+		<evaluate expression="new ${package}.web.vo.agent.AgentVO()"
+			result="flowScope.selectedAgentVO" />
+		<evaluate expression="agentUIService.listAgents()" result="flowScope.agentVOList" />
+		<evaluate expression="flowScope.agentVOList.get(0)" result="flowScope.selectedAgentVO" />
+
+	</on-start>
+
+	<view-state id="agentViewState" view="agentViewPage">
+		<on-entry>
+			<evaluate expression="(flowScope.selectedAgentVO != null) ? flowScope.selectedAgentVO:flowScope.agentVOList.get(0)" result="flowScope.selectedAgentVO"/>
+		</on-entry>
+		
+		<transition on="edit" to="agentEditState" />
+		<transition on="create" to="agentCreateState" />
+
+		<transition on="select">
+			<evaluate expression="flowScope.agentVOList.get(requestParameters.selected)"
+				result="flowScope.selectedAgentVO" />
+		</transition>
+
+	</view-state>
+
+	
+	<view-state id="agentCreateState" view="agentFormPage">
+		<on-entry>
+			<evaluate expression="new ${package}.web.vo.agent.AgentVO()" result="flowScope.selectedAgentVO"/>
+		</on-entry>
+		
+		<transition on="saveAgent" to="agentViewState" >
+			<evaluate expression="agentUIService.saveAgent(flowScope.selectedAgentVO)" />	
+		</transition>
+	
+		<transition on="cancel" to="agentViewState" />
+	</view-state>
+	
+	<view-state id="agentEditState" view="agentFormPage">
+		<transition on="saveAgent" to="agentViewState" >
+			<evaluate expression="agentUIService.saveAgent(flowScope.selectedAgentVO)" />	
+		</transition>
+	
+		<transition on="cancel" to="agentViewState" />
+	</view-state>
+	
+</flow>            
