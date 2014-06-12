@@ -6,7 +6,10 @@ Usage
 
 
 ```sh
-mvn archetype:generate -DarchetypeArtifactId=sirpi-webapp-archetype -DarchetypeGroupId=org.hcl.adcoe -DarchetypeVersion=1.0.0 
+mvn archetype:generate \
+	-DarchetypeArtifactId=sirpi-webapp-archetype \
+	-DarchetypeGroupId=org.hcl.adcoe \
+	-DarchetypeVersion=1.0.0 
 
 ```
 
