@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-	The Sirpi Basic Archetype provides a Maven archetype for generating 
+	The Sirpi MVC Web App Archetype provides a Maven archetype for generating 
 	a Multi-Modular web starter project. 
 	
 	Copyright (C) 2014 JavaCoe HCL Technologies 
@@ -19,18 +19,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.hcl.adcoe</groupId>
-	<artifactId>sirpi-webbasic-archetype</artifactId>
+	<artifactId>sirpi-webapp-archetype</artifactId>
 	<version>1.0.0</version>
 
 	<packaging>maven-archetype</packaging>
 
-	<name>Sirpi Web Basic Archetype</name>
+	<name>Sirpi Web MVC Archetype</name>
 
 	<!-- License -->
 	<licenses>
 		<license>
 			<name>GNU General Public License (GPL)</name>
-			<url>https://github.com/hcljavacoe/sirpi-webbasic-archetype</url>
+			<url>https://github.com/sirpi-hcl/sirpi-webapp-archetype</url>
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
@@ -116,14 +116,14 @@
 		are as follows. -->
 
 	<scm>
-		<connection>scm:git:git://github.com/hcljavacoe/sirpi-webbasic-archetype.git</connection>
-		<developerConnection>scm:git:git@github.com/hcljavacoe/sirpi-webbasic-archetype.git</developerConnection>
-		<url>https://github.com/hcljavacoe/sirpi-webbasic-archetype.git</url>
+		<connection>scm:git:git://github.com/sirpi-hcl/sirpi-webapp-archetype.git</connection>
+		<developerConnection>scm:git:git@github.com/sirpi-hcl/sirpi-webapp-archetype.git</developerConnection>
+		<url>https://github.com/sirpi-hcl/sirpi-webapp-archetype.git</url>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/hcljavacoe/sirpi-webbasic-archetype/issues</url>
+		<url>https://github.com/sirpi-hcl/sirpi-webapp-archetype/issues</url>
 	</issueManagement>
 
 </project>
