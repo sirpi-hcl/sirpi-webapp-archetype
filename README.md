@@ -1,7 +1,14 @@
-Sirpi Basic Web MVC Archetype
+Sirpi Web MVC Application Archetype
 =============================
 
+Usage
+------
 
+
+```sh
+mvn archetype:generate -DarchetypeArtifactId=sirpi-webapp-archetype -DarchetypeGroupId=org.hcl.adcoe -DarchetypeVersion=1.0.0 
+
+```
 
 
 
